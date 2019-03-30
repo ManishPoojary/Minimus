@@ -4,7 +4,7 @@ import { UiService } from 'src/app/services/ui/ui.service';
 @Component({
   selector: 'app-add-card',
   templateUrl: './add-card.component.html',
-  styleUrls: ['./add-card.component.sass']
+  styleUrls: ['./add-card.component.scss']
 })
 export class AddCardComponent implements OnInit {
 

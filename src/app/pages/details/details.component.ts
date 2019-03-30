@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {WeatherService} from '../../services/weather/weather.service';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-details',
@@ -37,6 +38,12 @@ export class DetailsComponent implements OnInit {
   day5Name: string;
   day5State: string;
   day5Temp: number;
+
+  sub1: Subscription;
+  sub2: Subscription;
+  sub3: Subscription;
+  sub4: Subscription;
+  sub5: Subscription;
 
   constructor(public activeRouter: ActivatedRoute, public weather: WeatherService) {
   }
@@ -90,6 +97,14 @@ export class DetailsComponent implements OnInit {
 
     });
 
+  }
+
+  ngOnDestroy() {
+    this.sub1.unsubscribe();
+    this.sub2.unsubscribe();
+    this.sub3.unsubscribe();
+    this.sub4.unsubscribe();
+    this.sub5.unsubscribe();
   }
 
 }

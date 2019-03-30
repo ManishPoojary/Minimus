@@ -7,6 +7,10 @@ import { HomeComponent } from './pages/home/home.component';
 import { AddCardComponent } from './ui/add-card/add-card.component';
 import { WeatherCardComponent } from './ui/weather-card/weather-card.component';
 import { DetailsComponent } from './pages/details/details.component';
+import { LoginComponent } from './pages/login/login.component';
+import { SignupComponent } from './pages/signup/signup.component';
+import {HttpClientModule} from '@angular/common/http';
+import { WeatherService } from './services/weather/weather.service';
 
 @NgModule({
   declarations: [
@@ -14,13 +18,16 @@ import { DetailsComponent } from './pages/details/details.component';
     HomeComponent,
     AddCardComponent,
     WeatherCardComponent,
-    DetailsComponent
+    DetailsComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [WeatherService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
